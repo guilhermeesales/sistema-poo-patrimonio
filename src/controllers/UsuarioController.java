@@ -26,9 +26,7 @@ public class UsuarioController {
             }
 
             UsuarioModel.setUsuarioLogado(false);
-
         }
-
 
         return null;
     }
@@ -46,21 +44,11 @@ public class UsuarioController {
                 bView.exibirHomeView();
             }
 
-
         }
-
-
-
-    }
-
-
-    public ArrayList<PatrimonioModel> consultarPatrimonios() {
-        return null;
     }
 
     public RelatorioModel gerarRelatorioChamado(int codRelatorio) {
         return null;
     }
-
 
 }

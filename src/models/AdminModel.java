@@ -3,7 +3,6 @@ package models;
 import java.util.Map;
 
 public class AdminModel extends UsuarioModel {
-
     public Map<String, UsuarioModel> loadAdminstrador() {
         UsuarioModel userAdmin = new UsuarioModel();
         userAdmin.setNome("Guilherme Sales");
@@ -16,4 +15,8 @@ public class AdminModel extends UsuarioModel {
         return userAdmin.UsuariosCadastrados;
 
     }
+
+
+
+
 }

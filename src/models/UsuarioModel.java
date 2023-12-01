@@ -14,7 +14,7 @@ public class UsuarioModel {
     private String senha;
     private String nivelAcesso;
     Map<String, UsuarioModel> UsuariosCadastrados = new HashMap<>();
-
+    ArrayList<PatrimonioModel> patrimoniosCadastrados = new ArrayList<>();
 
     // Getters e Setters
     public String getNome() {
@@ -50,8 +50,25 @@ public class UsuarioModel {
     public static boolean isUsuarioLogado() {
         return usuarioLogado;
     }
-
     public static void setUsuarioLogado(boolean usuarioLogado) {
         UsuarioModel.usuarioLogado = usuarioLogado;
     }
+    public ArrayList<PatrimonioModel> getPatrimoniosCadastrados() {
+        return patrimoniosCadastrados;
+    }
+
+    public void setPatrimoniosCadastrados(String nome, String tipo, LocalizacaoModel local) {
+        patrimoniosCadastrados.add(new PatrimonioModel(nome, tipo, local));
+    }
+
+    // Devolver todos os patrimônios cadastrados no sistema
+    public ArrayList<PatrimonioModel> consultarPatrimonio() {
+        boolean notNull = false;
+
+
+        return null;
+    }
+
+
+
 }

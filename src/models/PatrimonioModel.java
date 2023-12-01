@@ -18,6 +18,10 @@ public class PatrimonioModel {
     private LocalDate dataDepreciacao;//Data em que o patrimônio será depreciado.
 
 
+    public PatrimonioModel() {
+
+    }
+
     public PatrimonioModel(String nome, String tipo, LocalizacaoModel local){
         qtdPatrimonios++;
         this.codigo = qtdPatrimonios;
