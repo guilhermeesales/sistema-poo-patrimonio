@@ -8,6 +8,15 @@ public class LocalizacaoModel {
 
     ArrayList<String> colecaoDeSalas = new ArrayList<String>(Arrays.asList("1","2","3","4","5","6","7","8","Laboratorio","Secretaria")); //Array com as salas de cada bloco.
     
+    public LocalizacaoModel(){
+        
+    }
+
+    public LocalizacaoModel(String sala, byte bloco, byte unidade){
+        this.unidade = unidade;
+        this.bloco = bloco;
+        this.sala = sala;
+    }
 
     public byte getUnidade(){
         return this.unidade;
