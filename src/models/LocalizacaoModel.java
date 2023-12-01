@@ -39,7 +39,5 @@ public class LocalizacaoModel {
         if (colecaoDeSalas.contains(sala)) { //Se a sala passada estiver no parâmetro, ele seta.
             this.sala = sala;
         }else this.sala = null;
-
     }
-
 }

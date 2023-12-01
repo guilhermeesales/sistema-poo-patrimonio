@@ -1,18 +1,33 @@
 package models;
-
 import java.time.LocalDate;
 
 public class PatrimonioModel {
+    private static int codigos = 0; //Variável estática que ira definir um novo código para cada patrimonio cadastrado.
     private int codigo; //Código do patrimonio, da etiqueta.
-    private String defeito; //Defeito existente no patrimônio, caso não tenha será null.
+
     private String nome; //Nome do patrimônio, por ex: extintor, mesa, carteira, cadeira, PC , monitor, mouse, teclado, ar-condicionado,
     // estante, banco, projetor, lousa, porta, bebedouro, telefone fixo.
-
     private String tipo; //Tipo do patrimônio como: material informático, móvel, material de escritório.
+    private String defeito; //Defeito existente no patrimônio, caso não tenha será null.
+    
     private LocalizacaoModel local = new LocalizacaoModel(); //Localização de aonde está o patrimônio, por exemplo: Unidade 1 Bloco 2 Sala 2.
     private LocalDate dataDeCadastro; //Data em que o patrimônio foi cadastrado no sistema.
     private LocalDate ultimaManutencao; //Data em que o patrimônio teve sua última manutenção, caso tenha tido algum defeito antes.
     private LocalDate dataDepreciacao; //Data em que o patrimônio será depreciado.
+
+
+    public PatrimonioModel(String nome, String tipo, String defeito, LocalizacaoModel local, LocalDate dataDeCadastro,LocalDate ultimaManuntencao, LocalDate dataDepreciacao){
+        codigos++;
+        this.codigo = codigos;
+        this.nome = nome;
+        this.tipo = tipo;
+        this.local = local;
+        this.defeito = defeito;
+        this.dataDeCadastro = dataDeCadastro;
+        this.ultimaManutencao = ultimaManuntencao;
+        this.dataDepreciacao = dataDepreciacao;
+    }
+
 
     //Getters da classe.
     public int getCodigo() {
@@ -48,11 +63,8 @@ public class PatrimonioModel {
     }
 
 
-    //Setter's da classe.
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
 
+    //Setters da classe
     public void setDefeito(String defeito) {
         this.defeito = defeito;
     }
@@ -69,7 +81,6 @@ public class PatrimonioModel {
     public void setLocal(LocalizacaoModel local) {
         this.local = local;
     }
-
 
     public void setDataDeCadastro(LocalDate dataDeCadastro) {
         this.dataDeCadastro = dataDeCadastro;
