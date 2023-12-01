@@ -6,6 +6,8 @@ import java.util.Map;
 
 public class UsuarioModel {
     // Implementação da classe de Usuário
+    public static boolean usuarioLogado;
+
     private String nome;
     private char sexo;
     private String email;
@@ -45,5 +47,11 @@ public class UsuarioModel {
     public void setNivelAcesso(String nivelAcesso) {
         this.nivelAcesso = nivelAcesso;
     }
+    public static boolean isUsuarioLogado() {
+        return usuarioLogado;
+    }
 
+    public static void setUsuarioLogado(boolean usuarioLogado) {
+        UsuarioModel.usuarioLogado = usuarioLogado;
+    }
 }
