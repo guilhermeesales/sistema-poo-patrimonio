@@ -7,7 +7,7 @@ public class PatrimonioModel {
 
     private String nome; //Nome do patrimônio, por ex: extintor, mesa, carteira, cadeira, PC , monitor, mouse, teclado, ar-condicionado,
     // estante, banco, projetor, lousa, porta, bebedouro, telefone fixo.
-    private String tipo; //Tipo do patrimônio como: material informático, móvel, material de escritório.
+    private String tipo; //Tipo do patrimônio como: material informático, móvel, material de escritório, material de segurança.
     
     private String defeito = null; //Defeito existente no patrimônio, não iremos cadastrar um novo patrimônio no sistema, sendo ele quebrado, então ele irá começar null.
     
