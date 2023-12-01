@@ -3,11 +3,12 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
-
 import models.AdminModel;
 import models.PatrimonioModel;
 import models.RelatorioModel;
 import models.UsuarioModel;
+import views.AdminView;
+import views.BasicView;
 
 public class UsuarioController {
     AdminModel adm = new AdminModel();
@@ -15,21 +16,43 @@ public class UsuarioController {
     // Methods
     public UsuarioModel logarSistema(String email, String senha) {
         Map<String, UsuarioModel> admin = adm.loadAdminstrador();
-        Collection<UsuarioModel> values = admin.values();
+        Collection<UsuarioModel> usuarios = admin.values();
 
-        for(UsuarioModel valor : values) {
-            if(email.equals(valor.getEmail()) && senha.equals(valor.getSenha())) {
-                System.out.println("Logado com sucesso!");
-                return valor;
+        for(UsuarioModel usuario : usuarios) {
+            if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
+                UsuarioModel.setUsuarioLogado(true);
+                definirRotas(usuario);
+                return usuario;
             }
 
-            System.out.println("Digite suas credenciais corretamente!");
+            UsuarioModel.setUsuarioLogado(false);
 
         }
 
 
         return null;
     }
+
+
+    public void definirRotas(UsuarioModel usuario) {
+        // Definindo o controle de rotas Admin e Basic
+        if(AdminModel.isUsuarioLogado()) {
+            if(usuario.getNivelAcesso().equals("Admin".toLowerCase())) {
+                AdminView aView = new AdminView();
+                aView.exibirAdminView();
+
+            } else {
+                BasicView bView = new BasicView();
+                bView.exibirHomeView();
+            }
+
+
+        }
+
+
+
+    }
+
 
     public ArrayList<PatrimonioModel> consultarPatrimonios() {
         return null;
