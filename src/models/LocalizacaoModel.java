@@ -1,11 +1,12 @@
 package models;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LocalizacaoModel {
     byte unidade, bloco; 
     String sala; 
 
-    ArrayList<String> colecaoDeSalas = new ArrayList<String>(); //Array com as salas de cada bloco.
+    ArrayList<String> colecaoDeSalas = new ArrayList<String>(Arrays.asList("1","2","3","4","5","6","7","8","Laboratorio","Secretaria")); //Array com as salas de cada bloco.
     
 
     public byte getUnidade(){
@@ -35,16 +36,9 @@ public class LocalizacaoModel {
     }
 
     public void setSala(String sala){ //Setando as salas.
-
-        for (String percorredor : colecaoDeSalas) { //Irá percorrer o array, vendo se a sala setada existe no Array.
-
-            if (percorredor.equals(sala)) { //Se encontrar no Array de Salas existentes, irá setar.
-                this.sala = sala;
-                return;
-            }
-        }
-
-        this.sala = null; //Caso não, receberá null.
+        if (colecaoDeSalas.contains(sala)) { //Se a sala passada estiver no parâmetro, ele seta.
+            this.sala = sala;
+        }else this.sala = null;
 
     }
 
