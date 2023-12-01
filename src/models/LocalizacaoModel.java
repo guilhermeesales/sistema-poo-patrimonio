@@ -1,12 +1,12 @@
 package models;
+import java.util.ArrayList;
 
 public class LocalizacaoModel {
     byte unidade, bloco; 
     String sala; 
 
-    String[] colecaoDeSalas = {"1","2","3","4","5","6","7","8"} ; //Array com as salas de cada bloco.
-    //NÃO ESTÁ DEFINIDO *AINDA* COM EXATIDÃO, POIS É NECESSÁRIO REVERMOS PRECISAMENTE QUAL QUANTIDADE DE SALAS POR CADA BLOCO,
-    //E OS LABORATORIOS AUXILIARES.
+    ArrayList<String> colecaoDeSalas = new ArrayList<String>(); //Array com as salas de cada bloco.
+    
 
     public byte getUnidade(){
         return this.unidade;
