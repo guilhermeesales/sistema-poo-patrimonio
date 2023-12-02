@@ -14,6 +14,7 @@ public class UsuarioController {
     AdminModel adm = new AdminModel();
 
     // Methods
+
     public UsuarioModel logarSistema(String email, String senha) {
         Map<String, UsuarioModel> admin = adm.loadAdminstrador();
         Collection<UsuarioModel> usuarios = admin.values();
@@ -57,12 +58,12 @@ public class UsuarioController {
         UsuarioModel admin = new UsuarioModel();
 
 
-        admin.setPatrimoniosCadastrados("EXTINTOR UFC RUSSAS", "SEILA");
-        admin.setPatrimoniosCadastrados("MESA UFC RUSSAS", "SEILA");
-        admin.setPatrimoniosCadastrados("LIVRO UFC RUSSAS", "SEILA");
-        admin.setPatrimoniosCadastrados("CARTEIRA UFC RUSSAS", "SEILA");
+        adm.setPatrimoniosCadastrados("EXTINTOR UFC RUSSAS", "SEILA");
+        adm.setPatrimoniosCadastrados("MESA UFC RUSSAS", "SEILA");
+        adm.setPatrimoniosCadastrados("LIVRO UFC RUSSAS", "SEILA");
+        adm.setPatrimoniosCadastrados("CARTEIRA UFC RUSSAS", "SEILA");
 
-        ArrayList<PatrimonioModel> patrimonios = admin.getPatrimoniosCadastrados();
+        ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
         System.out.println("ENTREI AQUI");
 
 
@@ -71,7 +72,8 @@ public class UsuarioController {
         }
 
         for(PatrimonioModel patrimonio : patrimonios) {
-            System.out.println(patrimonio.toString());
+            System.out.println(patrimonio.getNome());
+            System.out.println(patrimonio.getTipo());
 
         }
 
