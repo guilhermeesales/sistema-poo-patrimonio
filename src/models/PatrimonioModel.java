@@ -79,7 +79,6 @@ public class PatrimonioModel {
         this.tipo = tipo;
     }
 
-
     public void setLocal(LocalizacaoModel local) {
         this.local = local;
     }
