@@ -11,8 +11,6 @@ public class AdminView {
 
         UsuarioController userController = new UsuarioController();
 
-
-
         System.out.println("PATRIMONIOS CADASTRADOS NO SISTEMA");
 
         userController.consultarPatrimonio();

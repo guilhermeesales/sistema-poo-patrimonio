@@ -22,12 +22,12 @@ public class PatrimonioModel {
 
     }
 
-    public PatrimonioModel(String nome, String tipo){
+    public PatrimonioModel(String nome, String tipo, LocalizacaoModel local){
         qtdPatrimonios++;
         this.codigo = qtdPatrimonios;
         this.nome = nome;
         this.tipo = tipo;
-//        this.local = local;
+        this.local = local;
     }
 
 

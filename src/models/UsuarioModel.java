@@ -57,7 +57,7 @@ public class UsuarioModel {
     }
 
     public void setPatrimoniosCadastrados(String nome, String tipo) {
-        patrimoniosCadastrados.add(new PatrimonioModel(nome, tipo));
+        // patrimoniosCadastrados.add(new PatrimonioModel(nome, tipo));
     }
 
     public Map<String, UsuarioModel> getUsuariosCadastrados() {
