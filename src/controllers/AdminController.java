@@ -1,17 +1,23 @@
 package controllers;
 
-import models.LocalizacaoModel;
-import models.PatrimonioModel;
+import models.AdminModel;
 import models.UsuarioModel;
 
-import java.util.ArrayList;
 
 public class AdminController {
-    UsuarioModel usuarioM = new UsuarioModel();
-    public boolean cadastrarAtivos(String nome, String tipo, LocalizacaoModel local) {
-        ArrayList<PatrimonioModel> patrimonios = usuarioM.getPatrimoniosCadastrados();
-        patrimonios.add(new PatrimonioModel(nome, tipo, local));
+    UsuarioModel userModel = new UsuarioModel();
+    public boolean cadastrarAtivos(String nome, String tipo) {
+        userModel.setPatrimoniosCadastrados(nome, tipo);
+        return true;
+
+    }
+
+    public boolean cadastrarAlunos(String nome, char sexo, String email, String senha, String nivelAcesso) {
+        userModel.setUsuariosCadastrados(nome, sexo, email, senha, nivelAcesso);
         return true;
     }
+
+
+
 
 }

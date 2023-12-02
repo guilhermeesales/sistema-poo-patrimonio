@@ -47,8 +47,34 @@ public class UsuarioController {
         }
     }
 
+    // Gerar um relatorio feito pelo usuário comum
     public RelatorioModel gerarRelatorioChamado(int codRelatorio) {
         return null;
+    }
+    UsuarioModel userModel = new UsuarioModel();
+    // Devolver todos os patrimônios cadastrados no sistema
+    public void consultarPatrimonio() {
+        UsuarioModel admin = new UsuarioModel();
+
+
+        admin.setPatrimoniosCadastrados("EXTINTOR UFC RUSSAS", "SEILA");
+        admin.setPatrimoniosCadastrados("MESA UFC RUSSAS", "SEILA");
+        admin.setPatrimoniosCadastrados("LIVRO UFC RUSSAS", "SEILA");
+        admin.setPatrimoniosCadastrados("CARTEIRA UFC RUSSAS", "SEILA");
+
+        ArrayList<PatrimonioModel> patrimonios = admin.getPatrimoniosCadastrados();
+        System.out.println("ENTREI AQUI");
+
+
+        if(patrimonios.isEmpty()) {
+            System.out.println("Está vazio...");
+        }
+
+        for(PatrimonioModel patrimonio : patrimonios) {
+            System.out.println(patrimonio.toString());
+
+        }
+
     }
 
 }

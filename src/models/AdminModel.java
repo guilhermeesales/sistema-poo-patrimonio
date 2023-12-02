@@ -3,6 +3,18 @@ package models;
 import java.util.Map;
 
 public class AdminModel extends UsuarioModel {
+    public AdminModel() {
+
+    }
+
+    public AdminModel(String nome,char sexo, String email, String senha, String nivelAcesso) {
+        this.setNome(nome);
+        this.setSexo(sexo);
+        this.setEmail(email);
+        this.setSenha(senha);
+        this.setNivelAcesso(nivelAcesso);
+    }
+
     public Map<String, UsuarioModel> loadAdminstrador() {
         UsuarioModel userAdmin = new UsuarioModel();
         userAdmin.setNome("Guilherme Sales");

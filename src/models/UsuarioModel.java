@@ -7,7 +7,6 @@ import java.util.Map;
 public class UsuarioModel {
     // Implementação da classe de Usuário
     public static boolean usuarioLogado;
-
     private String nome;
     private char sexo;
     private String email;
@@ -57,16 +56,16 @@ public class UsuarioModel {
         return patrimoniosCadastrados;
     }
 
-    public void setPatrimoniosCadastrados(String nome, String tipo, LocalizacaoModel local) {
-        patrimoniosCadastrados.add(new PatrimonioModel(nome, tipo, local));
+    public void setPatrimoniosCadastrados(String nome, String tipo) {
+        patrimoniosCadastrados.add(new PatrimonioModel(nome, tipo));
     }
 
-    // Devolver todos os patrimônios cadastrados no sistema
-    public ArrayList<PatrimonioModel> consultarPatrimonio() {
-        boolean notNull = false;
+    public Map<String, UsuarioModel> getUsuariosCadastrados() {
+        return UsuariosCadastrados;
+    }
 
-
-        return null;
+    public void setUsuariosCadastrados(String nome, char sexo, String email, String senha, String nivelAcesso) {
+        this.UsuariosCadastrados.put("usuario", new AdminModel(nome, sexo, email, senha, nivelAcesso));
     }
 
 
