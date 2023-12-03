@@ -13,7 +13,7 @@ public class UsuarioModel {
     private String senha;
     private String nivelAcesso;
     Map<String, UsuarioModel> UsuariosCadastrados = new HashMap<>();
-    ArrayList<PatrimonioModel> patrimoniosCadastrados = new ArrayList<>();
+    private static ArrayList<PatrimonioModel> patrimoniosCadastrados = new ArrayList<>();
 
     // Getters e Setters
     public String getNome() {
@@ -56,8 +56,8 @@ public class UsuarioModel {
         return patrimoniosCadastrados;
     }
 
-    public void setPatrimoniosCadastrados(String nome, String tipo) {
-        // patrimoniosCadastrados.add(new PatrimonioModel(nome, tipo));
+    public void setPatrimoniosCadastrados(String nome, String tipo, LocalizacaoModel local) {
+         patrimoniosCadastrados.add(new PatrimonioModel(nome, tipo, local));
     }
 
     public Map<String, UsuarioModel> getUsuariosCadastrados() {
@@ -67,7 +67,4 @@ public class UsuarioModel {
     public void setUsuariosCadastrados(String nome, char sexo, String email, String senha, String nivelAcesso) {
         this.UsuariosCadastrados.put("usuario", new AdminModel(nome, sexo, email, senha, nivelAcesso));
     }
-
-
-
 }

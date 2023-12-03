@@ -55,12 +55,6 @@ public class UsuarioController {
     public void consultarPatrimonio() {
         UsuarioModel admin = new UsuarioModel();
 
-
-        adm.setPatrimoniosCadastrados("EXTINTOR UFC RUSSAS", "SEILA");
-        adm.setPatrimoniosCadastrados("MESA UFC RUSSAS", "SEILA");
-        adm.setPatrimoniosCadastrados("LIVRO UFC RUSSAS", "SEILA");
-        adm.setPatrimoniosCadastrados("CARTEIRA UFC RUSSAS", "SEILA");
-
         ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
         System.out.println("ENTREI AQUI");
 
@@ -72,6 +66,7 @@ public class UsuarioController {
         for(PatrimonioModel patrimonio : patrimonios) {
             System.out.println(patrimonio.getNome());
             System.out.println(patrimonio.getTipo());
+            System.out.println(patrimonio.getLocal());
 
         }
 
