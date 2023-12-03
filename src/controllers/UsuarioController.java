@@ -7,8 +7,8 @@ import models.AdminModel;
 import models.PatrimonioModel;
 import models.RelatorioModel;
 import models.UsuarioModel;
-import views.AdminView;
-import views.BasicView;
+import views.UsuarioAdminView;
+import views.UsuarioBasicView;
 
 public class UsuarioController {
     AdminModel adm = new AdminModel();
@@ -37,12 +37,10 @@ public class UsuarioController {
         // Definindo o controle de rotas Admin e Basic
         if(AdminModel.isUsuarioLogado()) {
             if(usuario.getNivelAcesso().equals("Admin".toLowerCase())) {
-                AdminView aView = new AdminView();
-                aView.exibirAdminView();
+                UsuarioAdminView.ExibirUsuarioAdminView();
 
             } else {
-                BasicView bView = new BasicView();
-                bView.exibirHomeView();
+                UsuarioBasicView.ExibirUsuarioBasicView();
             }
 
         }
