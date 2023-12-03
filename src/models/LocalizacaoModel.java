@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LocalizacaoModel {
-    byte unidade, bloco; 
-    String sala; 
+    private byte unidade, bloco; 
+    private String sala; 
 
     ArrayList<String> colecaoDeSalas = new ArrayList<String>(Arrays.asList("1","2","3","4","5","6","7","8","Laboratorio","Secretaria")); //Array com as salas de cada bloco.
     
