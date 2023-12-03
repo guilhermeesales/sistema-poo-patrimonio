@@ -5,14 +5,14 @@ import models.ChamadoModel;
 
 public class BasicController {
 
-	ArrayList<ChamadoModel> chamados = new ArrayList<>();
+	static ArrayList<ChamadoModel> chamados = new ArrayList<>();
 	public ChamadoModel criarChamado(String nomeChamado, String tipoChamado, String discricaoChamado) {
 		ChamadoModel chamado = new ChamadoModel(nomeChamado,tipoChamado,discricaoChamado);
-		this.chamados.add(chamado);
+		chamados.add(chamado);
 		return chamado; }
 	
 	
 	public ArrayList<ChamadoModel> historicoChamados() { 
-		return this.chamados;}
+		return chamados;}
 	
 }
