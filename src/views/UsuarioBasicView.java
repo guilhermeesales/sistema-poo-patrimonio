@@ -2,6 +2,7 @@ package views;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import views.ChamadoView;
 
 public class UsuarioBasicView {
     public static void ExibirUsuarioBasicView() {
@@ -33,11 +34,13 @@ public class UsuarioBasicView {
                     break;                    
                 case 3:
                     System.out.println("Você escolheu Criar Chamado.");
-                    // Adicione aqui o código para Criar Chamado.
+                    ChamadoView chamado = new ChamadoView();
+                    chamado.criarChamado();
                     break;
                 case 4:
                     System.out.println("Você escolheu editar Histórico de Chamados.");
-                    // Adicione aqui o código para Histórico de Chamados.
+                    ChamadoView historico = new ChamadoView();
+                    historico.historico();
                     break;                                    
                 case 0:
                     System.out.println("Você escolheu sair.");
