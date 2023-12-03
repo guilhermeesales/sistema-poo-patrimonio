@@ -17,11 +17,11 @@ public class BasicModel extends UsuarioModel {
 
     public Map<String, UsuarioModel> loadBasic() {
         UsuarioModel userBasic = new UsuarioModel();
-        userBasic.setNome(this.nome);
-        userBasic.setSexo(this.sexo);
-        userBasic.setEmail(this.email);
-        userBasic.setSenha(this.senha);
-        userBasic.setNivelAcesso(this.nivelAcesso.toLowerCase());
+        userBasic.setNome(getNome());
+        userBasic.setSexo(getSexo());
+        userBasic.setEmail(getEmail());
+        userBasic.setSenha(getSenha());
+        userBasic.setNivelAcesso(getNivelAcesso().toLowerCase());
         userBasic.UsuariosCadastrados.put("usuario", userBasic);
 
         return userBasic.UsuariosCadastrados;

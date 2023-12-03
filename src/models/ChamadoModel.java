@@ -17,22 +17,22 @@ public class ChamadoModel {
 		this.discricaoChamado = null;
 	}
 	
-	public getNomeChamado() {
+	public String getNomeChamado() {
 		return nomeChamado;
 	}
-	public getTipoChamado() {
+	public String getTipoChamado() {
 		return tipoChamado;
 	}
-	public getDiscricaoChamado() {
+	public String getDiscricaoChamado() {
 		return discricaoChamado;
 	}
-	public setNomeChamado(String nomeChamado) {
+	public void setNomeChamado(String nomeChamado) {
 		this.nomeChamado = nomeChamado;
 	}
-	public setTipoChamado(String tipoChamado) {
+	public void setTipoChamado(String tipoChamado) {
 		this.tipoChamado = tipoChamado;
 	}
-	public setDiscricaoChamado(String discricaoChamado) {
+	public void setDiscricaoChamado(String discricaoChamado) {
 		this.discricaoChamado = discricaoChamado;
 	}
 }
