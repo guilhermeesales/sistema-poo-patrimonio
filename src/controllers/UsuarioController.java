@@ -50,27 +50,16 @@ public class UsuarioController {
     public RelatorioModel gerarRelatorioChamado(int codRelatorio) {
         return null;
     }
-    UsuarioModel userModel = new UsuarioModel();
+
     // Devolver todos os patrimônios cadastrados no sistema
     public void consultarPatrimonio() {
-        UsuarioModel admin = new UsuarioModel();
-
-
-
-        System.out.println("ENTREI AQUI");
-
-
+        ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
         if(patrimonios.isEmpty()) {
-            System.out.println("Está vazio...");
+            System.out.println("Nenhum patrimônio cadastrado!");
         }
 
         for(PatrimonioModel patrimonio : patrimonios) {
-            System.out.println(patrimonio.getNome());
-            System.out.println(patrimonio.getTipo());
-            System.out.println(patrimonio.getLocal());
-
+            System.out.println(patrimonio);
         }
-
     }
-
 }
