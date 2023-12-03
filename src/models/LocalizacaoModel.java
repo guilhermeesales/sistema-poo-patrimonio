@@ -3,13 +3,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LocalizacaoModel {
-    byte unidade, bloco; 
-    String sala; 
+    private byte unidade, bloco; 
+    private String sala; 
 
     ArrayList<String> colecaoDeSalas = new ArrayList<String>(Arrays.asList("1","2","3","4","5","6","7","8","Laboratorio","Secretaria")); //Array com as salas de cada bloco.
     
     public LocalizacaoModel(){
-        
     }
 
     public LocalizacaoModel(String sala, byte bloco, byte unidade){
@@ -17,6 +16,14 @@ public class LocalizacaoModel {
         this.bloco = bloco;
         this.sala = sala;
     }
+
+    public void ExibirSalas(){
+        System.out.println("--Salas de cada bloco--");
+        for(String p : colecaoDeSalas){
+            System.out.println(p);
+        }
+    }
+
 
     public byte getUnidade(){
         return this.unidade;
