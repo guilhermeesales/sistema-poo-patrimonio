@@ -16,10 +16,11 @@ public class UsuarioController {
     // Methods
 
     public UsuarioModel logarSistema(String email, String senha) {
-        Map<String, UsuarioModel> admin = adm.loadAdminstrador();
-        Collection<UsuarioModel> usuarios = admin.values();
+        Map<String, AdminModel> admin = adm.loadAdminstrador();
+        Collection<AdminModel> usuarios = admin.values();
 
-        for(UsuarioModel usuario : usuarios) {
+        for(AdminModel usuario : usuarios) {
+            System.out.println(usuario.getNome());
             if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
                 UsuarioModel.setUsuarioLogado(true);
                 definirRotas(usuario);
@@ -31,7 +32,6 @@ public class UsuarioController {
 
         return null;
     }
-
 
     public void definirRotas(UsuarioModel usuario) {
         // Definindo o controle de rotas Admin e Basic
@@ -55,7 +55,8 @@ public class UsuarioController {
     public void consultarPatrimonio() {
         UsuarioModel admin = new UsuarioModel();
 
-        ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
+
+
         System.out.println("ENTREI AQUI");
 
 

@@ -15,8 +15,8 @@ public class BasicModel extends UsuarioModel {
         this.setNivelAcesso(nivelAcesso);
     }
 
-    public Map<String, UsuarioModel> loadBasic() {
-        UsuarioModel userBasic = new UsuarioModel();
+    public Map<String, AdminModel> loadBasic() {
+        AdminModel userBasic = new AdminModel();
         userBasic.setNome(getNome());
         userBasic.setSexo(getSexo());
         userBasic.setEmail(getEmail());

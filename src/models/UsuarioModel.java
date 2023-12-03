@@ -12,8 +12,13 @@ public class UsuarioModel {
     private String email;
     private String senha;
     private String nivelAcesso;
+
+    static public Map<String, AdminModel> UsuariosCadastrados = new HashMap<>();
+    ArrayList<PatrimonioModel> patrimoniosCadastrados = new ArrayList<>();
+
     Map<String, UsuarioModel> UsuariosCadastrados = new HashMap<>();
     private static ArrayList<PatrimonioModel> patrimoniosCadastrados = new ArrayList<>();
+
 
     // Getters e Setters
     public String getNome() {
@@ -60,11 +65,12 @@ public class UsuarioModel {
          patrimoniosCadastrados.add(new PatrimonioModel(nome, tipo, local));
     }
 
-    public Map<String, UsuarioModel> getUsuariosCadastrados() {
+    public Map<String, AdminModel> getUsuariosCadastrados() {
         return UsuariosCadastrados;
     }
 
-    public void setUsuariosCadastrados(String nome, char sexo, String email, String senha, String nivelAcesso) {
-        this.UsuariosCadastrados.put("usuario", new AdminModel(nome, sexo, email, senha, nivelAcesso));
+    public void setUsuariosCadastrados(AdminModel usuario) {
+        UsuariosCadastrados.put(usuario.getNome(), usuario);
+
     }
 }
