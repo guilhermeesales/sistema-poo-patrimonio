@@ -7,8 +7,6 @@ import models.AdminModel;
 import models.PatrimonioModel;
 import models.RelatorioModel;
 import models.UsuarioModel;
-import views.AdminView;
-import views.BasicView;
 
 public class UsuarioController {
     AdminModel adm = new AdminModel();
