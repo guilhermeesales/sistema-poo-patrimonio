@@ -3,8 +3,8 @@ package views;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UsuarioBasic {
-    public static void main(String[] args) {
+public class UsuarioBasicView {
+    public static void ExibirUsuarioBasicView() {
         Scanner scanner = new Scanner(System.in);
         int opcao = 1000;
         do {

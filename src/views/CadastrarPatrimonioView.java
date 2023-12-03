@@ -2,8 +2,8 @@ package views;
 
 import java.util.Scanner;
 
-public class CadastrarPatrimonio {
-    public static void main(String[] args) {
+public class CadastrarPatrimonioView {
+    public static void ExibirCadastrarPatrimonioView() {
         Scanner scanner = new Scanner(System.in);
         String nome, tipo, defeito, location;
         System.out.println("----- Cadastro de Patrimônios -----");

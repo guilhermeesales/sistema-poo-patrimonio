@@ -3,8 +3,8 @@ package views;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UsuarioAdmin {
-    public static void main(String[] args) {
+public class UsuarioAdminView {
+    public static void ExibirUsuarioAdminView() {
         Scanner scanner = new Scanner(System.in);
         int opcao = 1000;
         do {

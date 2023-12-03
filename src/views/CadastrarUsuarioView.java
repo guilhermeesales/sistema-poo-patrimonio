@@ -2,8 +2,8 @@ package views;
 
 import java.util.Scanner;
 
-public class CadastrarUsuario {
-    public static void main(String[] args) {
+public class CadastrarUsuarioView {
+    public static void ExibirCadastrarUsuarioView() {
         Scanner scanner = new Scanner(System.in);
         String nome, sexo, email, senha, accessLevel;
         System.out.println("Cadastro de Usuário");

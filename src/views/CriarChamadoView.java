@@ -2,8 +2,8 @@ package views;
 
 import java.util.Scanner;
 
-public class CriarChamado {
-    public static void main(String[] args) {
+public class CriarChamadoView {
+    public static void exibirCriarChamadoView() {
         Scanner scanner = new Scanner(System.in);
         String name, type, description;
         System.out.println("----- Criação de Chamado -----");
