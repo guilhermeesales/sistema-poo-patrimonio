@@ -6,12 +6,8 @@ import models.ChamadoModel;
 public class BasicController {
 
 	ArrayList<ChamadoModel> chamados = new ArrayList<>();
-	public ChamadoModel criarChamado() { 
-		ChamadoModel chamado = new ChamadoModel();
-		chamado.setNomeChamado(nomeChamado);
-		chamado.setTipoChamado(tipoChamado);
-		chamado.setDiscricaoChamado(discricaoChamado);
-		
+	public ChamadoModel criarChamado(String nomeChamado, String tipoChamado, String discricaoChamado) {
+		ChamadoModel chamado = new ChamadoModel(nomeChamado,tipoChamado,discricaoChamado);
 		this.chamados.add(chamado);
 		return chamado; }
 	
