@@ -1,5 +1,6 @@
 package views;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import models.LocalizacaoModel;
 import controllers.AdminController;
@@ -37,8 +38,8 @@ public class CadastrarPatrimonioView {
 
             scanner.close();
 
-        } catch (Exception e) {
-            System.out.println("Ocorreu um erro ao cadastrar o patrimônio: " + e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println("Digite uma entrada válida! - " + e.getMessage());
         }
     }
 }

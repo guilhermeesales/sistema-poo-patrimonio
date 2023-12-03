@@ -45,7 +45,7 @@ public class UsuarioAdminView {
                     break;
                 case 5:
                     System.out.println("Você escolheu Visualizar Patrimonios.");
-                    // Adicione aqui o código para Visualizar Patrimonios.
+                    VisualizarPatrimoniosView.exibirVisualizarPatrimoniosView();
                     break;
                 case 6:
                     System.out.println("Você escolheu Gerar Relatório.");
