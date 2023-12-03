@@ -8,6 +8,7 @@ public class UsuarioBasicView {
         Scanner scanner = new Scanner(System.in);
         int opcao = 1000;
         do {
+            System.out.println("  Tela de usuário basic  ");
             System.out.println("----- Escolha uma opção -----");
             System.out.println("1. Visualizar Patrimônios");
             System.out.println("2. Gerar Relatorio");            

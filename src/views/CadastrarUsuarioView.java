@@ -1,9 +1,13 @@
 package views;
 
+import controllers.AdminController;
+import models.AdminModel;
+
 import java.util.Scanner;
 
 public class CadastrarUsuarioView {
     public static void ExibirCadastrarUsuarioView() {
+        AdminController aController = new AdminController();
         Scanner scanner = new Scanner(System.in);
         String nome, sexo, email, senha, accessLevel;
         System.out.println("Cadastro de Usuário");
@@ -27,6 +31,10 @@ public class CadastrarUsuarioView {
         }
         try {
             // Código para cadastrar o usuário
+            char[] arrayDeChar = sexo.toCharArray();
+            AdminModel aModel = new AdminModel(nome, arrayDeChar[0], email, senha, accessLevel);
+            aController.cadastrarUsuarios(aModel);
+
         } catch (Exception e) {
             System.out.println("Ocorreu um erro ao cadastrar o usuário: " + e.getMessage());
         }

@@ -8,6 +8,7 @@ public class UsuarioAdminView {
         Scanner scanner = new Scanner(System.in);
         int opcao = 1000;
         do {
+            System.out.println("  Tela de administrador  ");
             System.out.println("----- Escolha uma opção -----");
             System.out.println("1. Cadastrar patrimônios");
             System.out.println("2. Controlar Inventario");            
@@ -29,7 +30,6 @@ public class UsuarioAdminView {
             switch (opcao) {
                 case 1:
                     System.out.println("Você escolheu Cadastrar patrimônios.");
-                    // Adicione aqui o código para Cadastrar patrimônios.
                     break;
                 case 2:
                     System.out.println("Você escolheu Controlar Inventario.");
@@ -38,6 +38,7 @@ public class UsuarioAdminView {
                 case 3:
                     System.out.println("Você escolheu Cadastrar usuários.");
                     // Adicione aqui o código para Cadastrar usuários.
+                    CadastrarUsuarioView.ExibirCadastrarUsuarioView();
                     break;
                 case 4:
                     System.out.println("Você escolheu editar Localizar Patrimonio.");
@@ -61,6 +62,7 @@ public class UsuarioAdminView {
                     break;                                       
                 case 0:
                     System.out.println("Você escolheu sair.");
+                    LoginView.ExibirLoginView();
                     break;
                 default:
                     System.out.println("Opção inválida.");

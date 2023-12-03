@@ -2,8 +2,9 @@ package controllers;
 
 import models.AdminModel;
 import models.PatrimonioModel;
+import models.UsuarioModel;
 
-public class AdminController {
+public class AdminController extends  UsuarioController{
     AdminModel AModel = new AdminModel();
     public boolean cadastrarAtivos(String nome, String tipo) {
         AModel.setPatrimoniosCadastrados(nome, tipo);
@@ -11,8 +12,8 @@ public class AdminController {
 
     }
 
-    public boolean cadastrarAlunos(String nome, char sexo, String email, String senha, String nivelAcesso) {
-        AModel.setUsuariosCadastrados(nome, sexo, email, senha, nivelAcesso);
+    public boolean cadastrarUsuarios(AdminModel adminModel) {
+        AdminModel.UsuariosCadastrados.put(adminModel.getEmail(), adminModel);
         return true;
     }
 

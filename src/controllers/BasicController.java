@@ -3,7 +3,7 @@ package controllers;
 import java.util.ArrayList;
 import models.ChamadoModel;
 
-public class BasicController {
+public class BasicController extends UsuarioController {
 
 	ArrayList<ChamadoModel> chamados = new ArrayList<>();
 	public ChamadoModel criarChamado(String nomeChamado, String tipoChamado, String discricaoChamado) {
