@@ -56,7 +56,7 @@ public class UsuarioController {
         UsuarioModel admin = new UsuarioModel();
 
 
-
+        ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
         System.out.println("ENTREI AQUI");
 
 

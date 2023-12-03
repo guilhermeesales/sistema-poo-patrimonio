@@ -14,9 +14,6 @@ public class UsuarioModel {
     private String nivelAcesso;
 
     static public Map<String, AdminModel> UsuariosCadastrados = new HashMap<>();
-    ArrayList<PatrimonioModel> patrimoniosCadastrados = new ArrayList<>();
-
-    Map<String, UsuarioModel> UsuariosCadastrados = new HashMap<>();
     private static ArrayList<PatrimonioModel> patrimoniosCadastrados = new ArrayList<>();
 
 

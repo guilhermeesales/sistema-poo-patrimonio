@@ -46,7 +46,4 @@ public class AdminController extends  UsuarioController{
         }
         return null;
     }
-
-
-
 }

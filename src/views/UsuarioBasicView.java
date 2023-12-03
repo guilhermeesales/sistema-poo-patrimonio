@@ -2,6 +2,8 @@ package views;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import controllers.ChamadoController;
 import views.ChamadoView;
 
 public class UsuarioBasicView {
@@ -12,7 +14,7 @@ public class UsuarioBasicView {
             System.out.println("  Tela de usuário basic  ");
             System.out.println("----- Escolha uma opção -----");
             System.out.println("1. Visualizar Patrimônios");
-            System.out.println("2. Gerar Relatorio");            
+            System.out.println("2. Gerar Relatorio dos Chamados");
             System.out.println("3. Criar Chamado");
             System.out.println("4. Histórico de Chamados");
             System.out.println("0. Voltar menu");
@@ -35,13 +37,12 @@ public class UsuarioBasicView {
                     break;                    
                 case 3:
                     System.out.println("Você escolheu Criar Chamado.");
-                    ChamadoView chamado = new ChamadoView();
-                    chamado.criarChamado();
+                    ChamadoView.exibirChamadoView();
                     break;
                 case 4:
-                    System.out.println("Você escolheu editar Histórico de Chamados.");
-                    ChamadoView historico = new ChamadoView();
-                    historico.historico();
+                    System.out.println("Você escolheu Histórico de Chamados.");
+                    ChamadoController cController = new ChamadoController();
+                    cController.historicoChamado();
                     break;                                    
                 case 0:
                     System.out.println("Você escolheu sair.");
@@ -52,6 +53,5 @@ public class UsuarioBasicView {
             }
             System.out.println();
         } while (opcao != 0);
-        scanner.close();
     }
 }

@@ -9,10 +9,13 @@ public class BasicController extends UsuarioController {
 	public ChamadoModel criarChamado(String nomeChamado, String tipoChamado, String discricaoChamado) {
 		ChamadoModel chamado = new ChamadoModel(nomeChamado,tipoChamado,discricaoChamado);
 		chamados.add(chamado);
-		return chamado; }
-	
-	
+		return chamado;
+
+	}
+
 	public ArrayList<ChamadoModel> historicoChamados() { 
-		return chamados;}
+		return chamados;
+
+	}
 	
 }
