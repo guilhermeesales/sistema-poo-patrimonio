@@ -72,7 +72,7 @@ public class VisualizarPatrimoniosView {
                         System.out.println("Nenhum patrimônio cadastrado!");
                     }else{
                         System.out.println("--TODOS OS PATRIMÔNIOS COM DEFEITO--");
-                        controlador.consultarPatrimonio();
+                        controlador.consultarPatrimonioDefeituosos();
                     }
                     break;
                 case 4:
