@@ -27,6 +27,7 @@ public class PatrimonioModel {
         this.nome = nome;
         this.tipo = tipo;
         this.local = local;
+        this.dataDeCadastro = LocalDate.now();
     }
 
     public String toString(){
