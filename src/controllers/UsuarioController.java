@@ -23,7 +23,6 @@ public class UsuarioController {
         Collection<AdminModel> usuarios = admin.values();
 
         for(AdminModel usuario : usuarios) {
-            System.out.println(usuario.getNome());
             if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
                 UsuarioModel.setUsuarioLogado(true);
                 definirRotas(usuario);
@@ -55,12 +54,12 @@ public class UsuarioController {
     
     // Chama a lista com os patrimônios cadastrados.
     ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
+
     // Devolver todos os patrimônios cadastrados no sistema
     public void consultarPatrimonio() {
         for(PatrimonioModel patrimonio : patrimonios) {
             System.out.println(patrimonio);
         }
-
     }
 
     //Printa todos os patrimônios com a mesma localização.
