@@ -1,17 +1,24 @@
 package controllers;
-import models.UsuarioModel;
-import java.util.HashMap;
-import java.util.Map;
+import models.AdminModel;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SessaoController {
-    private static final Map<String, UsuarioModel> sessaoUser = new HashMap<>();
-    public static void salvarUsuarioSession(String user, UsuarioModel userModel) {
-        sessaoUser.put(user, userModel);
+
+    public static final List<AdminModel> sessaoUsuario = new ArrayList<>();
+
+    public static void salvarUsuarioSession(AdminModel adminModel) {
+        sessaoUsuario.add(adminModel);
 
     }
 
+    public static AdminModel recuperarUsuarioSalvo() {
+        return sessaoUsuario.get(0);
+    }
+
+
     public static void destruirSession() {
-        sessaoUser.clear();
+        sessaoUsuario.clear();
     }
 
 

@@ -1,6 +1,11 @@
 package views;
 
+import controllers.SessaoController;
+import models.AdminModel;
+import models.UsuarioModel;
+
 import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Scanner;
 
 public class UsuarioAdminView {
@@ -59,6 +64,8 @@ public class UsuarioAdminView {
                 case 8:
                     System.out.println("Você escolheu Excluir patrimônios.");
                     // Adicione aqui o código para Excluir patrimônios.
+                    AdminModel aModel = SessaoController.recuperarUsuarioSalvo();
+                    System.out.println(aModel.getNome());
                     break;                                       
                 case 0:
                     System.out.println("Você escolheu sair.");
