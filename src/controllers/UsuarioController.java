@@ -24,7 +24,6 @@ public class UsuarioController {
 
         for(AdminModel usuario : usuarios) {
             if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
-                SessaoController.salvarUsuarioSession(usuario);
                 UsuarioModel.setUsuarioLogado(true);
                 definirRotas(usuario);
                 return usuario;
@@ -52,7 +51,7 @@ public class UsuarioController {
     public RelatorioModel gerarRelatorioChamado(int codRelatorio) {
         return null;
     }
-    
+
     // Chama a lista com os patrimônios cadastrados.
     ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
 
@@ -83,5 +82,9 @@ public class UsuarioController {
                 System.out.println(patrimonio);
             }
         }
+    }
+
+    public void consultarPatrimonioMesmoTipo(){
+
     }
 }
