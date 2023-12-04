@@ -1,12 +1,12 @@
 package views;
 
+import com.itextpdf.text.Document;
 import controllers.BasicController;
 import controllers.ChamadoController;
-import models.BasicModel;
 import models.ChamadoModel;
-
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class RelatorioView {
     public static void exibirRelatorioView() {
@@ -20,34 +20,42 @@ public class RelatorioView {
             System.out.println("Escolha sua opção: ");
             opc = scanner.nextInt();
 
-            if(opc == 1) {
-                try {
-                    BasicController bController = new BasicController();
-                    ArrayList<ChamadoModel> chamado = bController.historicoChamados();
-                    ChamadoController chamadoC = new ChamadoController();
-                    // Aqui fica toda a lógica para cadastrar um relatorio
-                    chamadoC.historicoChamado();
+                if(opc == 1) {
+                    try {
+                        BasicController bController = new BasicController();
+                        ArrayList<ChamadoModel> chamado = bController.historicoChamados();
+                        ChamadoController chamadoC = new ChamadoController();
+                        // Aqui fica toda a lógica para cadastrar um relatorio
+                        chamadoC.historicoChamado();
 
-                    System.out.println("Escolha o chamado através do número de chamado");
-                    System.out.println("Escolha o chamado que deseja: ");
-                    opc = scanner.nextInt();
+                        System.out.println("Escolha o chamado através do número de chamado");
+                        System.out.println("Escolha o chamado que deseja: ");
+                        opc = scanner.nextInt();
 
-                    ChamadoModel chamadoSelecionado = chamado.get(opc);
+                        ChamadoModel chamadoSelecionado = chamado.get(opc);
 
-                    if(chamadoSelecionado != null) {
-                        System.out.println(chamadoSelecionado.getNomeChamado());
-                        System.out.println(chamadoSelecionado.getDiscricaoChamado());
-                        System.out.println(chamadoSelecionado.getTipoChamado());
+                        if(chamadoSelecionado != null) {
+                            Document documento = null;
+                            try {
+                                documento = new Document();
+                                
 
+
+                            } catch (Exception e) {
+                                System.out.println(e.getMessage());
+                                documento.close();
+                            }
+
+
+                        }
+
+
+
+                    } catch (Exception e) {
+                        System.out.println("Houve algum erro. Mensagem: " + e.getMessage());
                     }
 
-
-
-                } catch (Exception e) {
-                    System.out.println("Houve algum erro. Mensagem: " + e.getMessage());
                 }
-
-            }
 
         } while(opc != 0);
     }
