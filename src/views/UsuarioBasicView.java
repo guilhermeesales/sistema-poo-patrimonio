@@ -9,7 +9,7 @@ import views.ChamadoView;
 public class UsuarioBasicView {
     public static void ExibirUsuarioBasicView() {
         Scanner scanner = new Scanner(System.in);
-        int opcao = 1000;
+        int opcao = -1;
         do {
             System.out.println("  Tela de usuário basic  ");
             System.out.println("----- Escolha uma opção -----");

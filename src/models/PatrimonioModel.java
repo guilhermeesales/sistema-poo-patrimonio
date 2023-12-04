@@ -9,7 +9,7 @@ public class PatrimonioModel {
     // estante, banco, projetor, lousa, porta, bebedouro, telefone fixo.
     private String tipo; //Tipo do patrimônio como: material informático, móvel, material de escritório, material de segurança.
     
-    private String defeito = "Ótimo estado"; //Defeito existente no patrimônio, não iremos cadastrar um novo patrimônio no sistema, sendo ele quebrado, então ele irá começar com "ótimo estado".
+    private String defeito; //Defeito existente no patrimônio, não iremos cadastrar um novo patrimônio no sistema, sendo ele quebrado, então ele irá começar com "ótimo estado".
     
     private LocalizacaoModel local = new LocalizacaoModel(); //Localização de aonde está o patrimônio, por exemplo: Unidade 1 Bloco 2 Sala 2.
     
@@ -31,7 +31,10 @@ public class PatrimonioModel {
     }
 
     public String toString(){
-        return "Código:"+ getCodigo() +" - Nome:"+ getNome() +" - Tipo:"+getTipo()+" \nUnidade:"+getLocal().getUnidade()+" - Bloco:" + getLocal().getBloco() + " - Sala:" + getLocal().getSala() + "\nData de Cadastro:"+getDataDeCadastro()+" - Data de Depreciação:"+getDataDepreciacao()+ " - Defeito"+getDefeito();
+        if (getDefeito() != null) {
+            return "Código:"+ getCodigo() +" - Nome:"+ getNome() +" - Tipo:"+getTipo()+" \nUnidade:"+getLocal().getUnidade()+" - Bloco:" + getLocal().getBloco() + " - Sala:" + getLocal().getSala() + "\nData de Cadastro:"+getDataDeCadastro()+" - Data de Depreciação:"+getDataDepreciacao()+ " - Defeito"+getDefeito();
+        }
+        return "Código:"+ getCodigo() +" - Nome:"+ getNome() +" - Tipo:"+getTipo()+" \nUnidade:"+getLocal().getUnidade()+" - Bloco:" + getLocal().getBloco() + " - Sala:" + getLocal().getSala() + "\nData de Cadastro:"+getDataDeCadastro()+" - Data de Depreciação:"+getDataDepreciacao()+ " - Defeito: Sem defeitos.";
     }
 
     //Getters da classe.
