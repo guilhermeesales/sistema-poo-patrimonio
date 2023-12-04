@@ -1,8 +1,10 @@
 package views;
 
 import com.itextpdf.text.Document;
+import com.itextpdf.text.pdf.PdfWriter;
 import controllers.BasicController;
 import controllers.ChamadoController;
+import controllers.RelatorioController;
 import models.ChamadoModel;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -32,23 +34,15 @@ public class RelatorioView {
                         System.out.println("Escolha o chamado que deseja: ");
                         opc = scanner.nextInt();
 
-                        ChamadoModel chamadoSelecionado = chamado.get(opc);
+                        ChamadoModel chamadoSelecionado = chamado.get(opc-1);
 
-                        if(chamadoSelecionado != null) {
-                            Document documento = null;
-                            try {
-                                documento = new Document();
-                                
+                        System.out.println(chamadoSelecionado.getNomeChamado());
+
+                        System.out.println("Digite o nome do relátorio: ");
 
 
-                            } catch (Exception e) {
-                                System.out.println(e.getMessage());
-                                documento.close();
-                            }
-
-
-                        }
-
+                        RelatorioController.gerarPDFRelatorio("Seila", "Seila", "Seila");
+                        System.out.println("Documento gerado com sucesso!");
 
 
                     } catch (Exception e) {

@@ -36,7 +36,7 @@ public class UsuarioBasicView {
                     break;
                 case 2:
                     System.out.println("Você escolheu Gerar Relatório.");
-
+                    RelatorioView.exibirRelatorioView();
                     break;                    
                 case 3:
                     System.out.println("Você escolheu Criar Chamado.");
