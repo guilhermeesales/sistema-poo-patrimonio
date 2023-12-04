@@ -128,4 +128,10 @@ public class UsuarioController {
         }
     }
 
+    public void exibirTiposPatrimonio(){
+        for ( String p : PatrimonioModel.arrayTipos ) {
+            System.out.println(p);
+        }
+    }
+
 }
