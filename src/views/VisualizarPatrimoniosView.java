@@ -1,12 +1,17 @@
 package views;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import controllers.UsuarioController;
+
+import controllers.AdminController;
+import models.AdminModel;
+import models.PatrimonioModel;
 
 public class VisualizarPatrimoniosView {
     public static void exibirVisualizarPatrimoniosView() {
         Scanner scanner = new Scanner(System.in);
-        int opcao = 0;
+        int opcao = -1;
+
         do {
             System.out.println("--VISUALIZAR PATRIMÔNIOS--");
             System.out.println("1.Listar todos");
@@ -25,15 +30,50 @@ public class VisualizarPatrimoniosView {
                 continue;
             }
 
+
+            AdminModel adm = new AdminModel();
+            ArrayList<PatrimonioModel> listaPatrimonios = adm.getPatrimoniosCadastrados();
+
+            AdminController controlador = new AdminController();
             switch (opcao) {
                 case 1:
-                    UsuarioController controlador = new UsuarioController();
-                    System.out.println("--TODOS OS PATRIMÔNIOS CADASTRADOS--");
-                    controlador.consultarPatrimonio();
+                    if (listaPatrimonios.isEmpty()) {
+                        System.out.println("Nenhum patrimônio cadastrado!");
+                    }else{
+                        System.out.println("--TODOS OS PATRIMÔNIOS CADASTRADOS--");
+                        controlador.consultarPatrimonio();
+                    }
                     break;
+
                 case 2:
+                    if (listaPatrimonios.isEmpty()) {
+                        System.out.println("Nenhum patrimônio cadastrado!");   
+                    }else{
+                        System.out.println("--Selecione o local para ver os patrimônios");
+                        System.out.println("Selecione a unidade");
+                        byte unidade = scanner.nextByte();
+                        
+                        System.out.println("Selecione o bloco");
+                        byte bloco = scanner.nextByte();
+
+                        System.out.println("Digite a sala(1 a 8 ou Laboratorio ou Secretaria)");
+                        String sala = scanner.nextLine();
+
+                        System.out.println("--PATRIMÔNIOS CADASTRADOS NESTA LOCALIZAÇÃO--");
+                        if (!controlador.consultarPatrimonioLocalizacao(sala, bloco, unidade)) {
+                            System.out.println("Não há patrimônios cadastrados nessa sala!");
+                        }
+
+                        
+                    }
                     break;
                 case 3:
+                    if (listaPatrimonios.isEmpty()) {
+                        System.out.println("Nenhum patrimônio cadastrado!");
+                    }else{
+                        System.out.println("--TODOS OS PATRIMÔNIOS COM DEFEITO--");
+                        controlador.consultarPatrimonioDefeituosos();
+                    }
                     break;
                 case 4:
                     break;

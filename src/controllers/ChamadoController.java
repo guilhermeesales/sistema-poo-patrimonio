@@ -4,6 +4,7 @@ import models.ChamadoModel;
 
 public class ChamadoController {
     public void historicoChamado() {
+        int cont = 0;
         BasicController basic = new BasicController();
         if (basic.historicoChamados().isEmpty()) {
             System.out.println("Nenhum chamado feito!");
@@ -14,13 +15,9 @@ public class ChamadoController {
                 System.out.println("Nome: " + basic.historicoChamados().get(i).getNomeChamado());
                 System.out.println("Tipo: " + basic.historicoChamados().get(i).getTipoChamado());
                 System.out.println("Descrição: " + basic.historicoChamados().get(i).getDiscricaoChamado());
+
+                cont++;
             }
-            /*for (ChamadoModel chamado : basic.historicoChamados()) {
-                System.out.println("-------------------------------------------------");
-                System.out.println("Nome: " + chamado.getNomeChamado());
-                System.out.println("Tipo: " + chamado.getTipoChamado());
-                System.out.println("Descrição: " + chamado.getDiscricaoChamado());
-            }*/
         }
     }
     public void editarChamado(int chamado, String editar, int opcaoEditar){

@@ -3,7 +3,10 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Scanner;
+
 import models.AdminModel;
+import models.LocalizacaoModel;
 import models.PatrimonioModel;
 import models.RelatorioModel;
 import models.UsuarioModel;
@@ -20,7 +23,6 @@ public class UsuarioController {
         Collection<AdminModel> usuarios = admin.values();
 
         for(AdminModel usuario : usuarios) {
-            System.out.println(usuario.getNome());
             if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
                 UsuarioModel.setUsuarioLogado(true);
                 definirRotas(usuario);
@@ -38,7 +40,6 @@ public class UsuarioController {
         if(AdminModel.isUsuarioLogado()) {
             if(usuario.getNivelAcesso().equals("Admin".toLowerCase())) {
                 UsuarioAdminView.ExibirUsuarioAdminView();
-
             } else {
                 UsuarioBasicView.ExibirUsuarioBasicView();
             }
@@ -51,20 +52,39 @@ public class UsuarioController {
         return null;
     }
 
+    // Chama a lista com os patrimônios cadastrados.
+    ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
+
     // Devolver todos os patrimônios cadastrados no sistema
     public void consultarPatrimonio() {
-        UsuarioModel admin = new UsuarioModel();
-
-        System.out.println("ENTREI AQUI");
-
-
-        ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
-        if(patrimonios.isEmpty()) {
-            System.out.println("Nenhum patrimônio cadastrado!");
-        }
-
         for(PatrimonioModel patrimonio : patrimonios) {
             System.out.println(patrimonio);
         }
+    }
+
+    //Printa todos os patrimônios com a mesma localização.
+    public boolean consultarPatrimonioLocalizacao(String sala, byte bloco, byte unidade){
+        LocalizacaoModel local = new LocalizacaoModel(sala, bloco, unidade);
+        boolean achado = false;
+
+        for(PatrimonioModel patrimonio : patrimonios) {
+            if (patrimonio.getLocal().equals(local)) {
+                achado = true;
+                System.out.println(patrimonio);
+            }
+        }
+        return achado;
+    }
+
+    public void consultarPatrimonioDefeituosos(){
+        for(PatrimonioModel patrimonio : patrimonios) {
+            if (patrimonio.getDefeito() != null ) {
+                System.out.println(patrimonio);
+            }
+        }
+    }
+
+    public void consultarPatrimonioMesmoTipo(){
+
     }
 }

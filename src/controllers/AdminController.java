@@ -5,7 +5,7 @@ import models.LocalizacaoModel;
 import models.PatrimonioModel;
 import models.UsuarioModel;
 
-public class AdminController extends  UsuarioController{
+public class AdminController extends  UsuarioController {
     AdminModel AModel = new AdminModel();
     public boolean cadastrarAtivos(String nome, String tipo, LocalizacaoModel local) {
         AModel.setPatrimoniosCadastrados(nome, tipo, local);
