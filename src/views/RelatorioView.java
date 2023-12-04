@@ -39,9 +39,9 @@ public class RelatorioView {
                         System.out.println(chamadoSelecionado.getNomeChamado());
 
                         System.out.println("Digite o nome do relátorio: ");
+                        String nomeRelatorio = scanner.next();
 
-
-                        RelatorioController.gerarPDFRelatorio("Seila", "Seila", "Seila");
+                        RelatorioController.gerarPDFRelatorio(nomeRelatorio, chamadoSelecionado.getNomeChamado(), chamadoSelecionado.getTipoChamado(), chamadoSelecionado.getDiscricaoChamado());
                         System.out.println("Documento gerado com sucesso!");
 
 

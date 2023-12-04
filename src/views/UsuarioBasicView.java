@@ -2,6 +2,8 @@ package views;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import controllers.SessaoController;
 import views.EditarChamadoView;
 import controllers.ChamadoController;
 import views.ChamadoView;
@@ -51,8 +53,10 @@ public class UsuarioBasicView {
                 case 5:
                     System.out.println("Você escolheu editar Chamado:");
                     EditarChamadoView.EditarChamadoView();
-                    case 0:
+                    break;
+                case 0:
                     System.out.println("Você escolheu sair.");
+                    SessaoController.destruirSession();
                     break;
                 default:
                     System.out.println("Opção inválida.");

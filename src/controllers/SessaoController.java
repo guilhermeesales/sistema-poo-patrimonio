@@ -9,7 +9,6 @@ public class SessaoController {
 
     public static void salvarUsuarioSession(AdminModel adminModel) {
         sessaoUsuario.add(adminModel);
-
     }
 
     public static AdminModel recuperarUsuarioSalvo() {
@@ -20,6 +19,5 @@ public class SessaoController {
     public static void destruirSession() {
         sessaoUsuario.clear();
     }
-
 
 }

@@ -24,6 +24,7 @@ public class UsuarioController {
 
         for(AdminModel usuario : usuarios) {
             if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
+                SessaoController.salvarUsuarioSession(usuario);
                 UsuarioModel.setUsuarioLogado(true);
                 definirRotas(usuario);
                 return usuario;

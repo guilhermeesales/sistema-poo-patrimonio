@@ -67,6 +67,7 @@ public class UsuarioAdminView {
                     break;                                       
                 case 0:
                     System.out.println("Você escolheu sair.");
+                    SessaoController.destruirSession();
                     LoginView.ExibirLoginView();
                     break;
                 default:
