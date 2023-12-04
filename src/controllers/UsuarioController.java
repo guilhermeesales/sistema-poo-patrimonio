@@ -3,7 +3,7 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
-import java.util.Scanner;
+import java.time.LocalDate;
 
 import models.AdminModel;
 import models.LocalizacaoModel;
@@ -76,15 +76,55 @@ public class UsuarioController {
         return achado;
     }
 
-    public void consultarPatrimonioDefeituosos(){
+    //Printa todos os patrimônios defeituosos.
+    public boolean consultarPatrimonioDefeituosos(){
+        boolean temdefeituosos = false;
         for(PatrimonioModel patrimonio : patrimonios) {
             if (patrimonio.getDefeito() != null ) {
+                temdefeituosos = true;
                 System.out.println(patrimonio);
             }
         }
+        return temdefeituosos;
+    }
+    //Printa todos os patrimônios com o mesmo tipo.
+    public boolean consultarPatrimonioMesmoTipo(String tipo){
+        boolean contemTipo = false;
+        for (PatrimonioModel p : patrimonios) {
+            if (p.getTipo().equals(tipo)) {
+                contemTipo = true;
+                System.out.println(p);
+            }
+        }
+        return contemTipo;
     }
 
-    public void consultarPatrimonioMesmoTipo(){
-
+    public boolean consultarPatrimonioDepreciacao(LocalDate data){
+        boolean contemData = false;
+        for (PatrimonioModel p: patrimonios) {
+            if (p.getDataDepreciacao().equals(data)) {
+                contemData = true;
+                System.out.println(p);
+            }
+        }
+        return contemData;
     }
+
+    public boolean consultarPatrimonioDataCadastro(LocalDate data){
+        boolean contemData = false;
+        for (PatrimonioModel p: patrimonios) {
+            if (p.getDataDeCadastro().equals(data)) {
+                contemData = true;
+                System.out.println(p);
+            }
+        }
+        return contemData;
+    }
+
+    public void consultarHistoricoDePatrimonios(){
+        for (int i = patrimonios.size()-1; i >= 0; i--) {
+            System.out.println(patrimonios.get(i).toString());
+        }
+    }
+
 }

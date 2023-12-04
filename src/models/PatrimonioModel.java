@@ -7,8 +7,9 @@ public class PatrimonioModel {
 
     private String nome; //Nome do patrimônio, por ex: extintor, mesa, carteira, cadeira, PC , monitor, mouse, teclado, ar-condicionado,
     // estante, banco, projetor, lousa, porta, bebedouro, telefone fixo.
-    private String tipo; //Tipo do patrimônio como: material informático, móvel, material de escritório, material de segurança.
-    
+    private String tipo; //Tipo do patrimônio.
+    public static final String[] arrayTipos = {"material informatico", "movel", "escritorio","material de segurança"};
+
     private String defeito; //Defeito existente no patrimônio, não iremos cadastrar um novo patrimônio no sistema, sendo ele quebrado, então ele irá começar com "ótimo estado".
     
     private LocalizacaoModel local = new LocalizacaoModel(); //Localização de aonde está o patrimônio, por exemplo: Unidade 1 Bloco 2 Sala 2.

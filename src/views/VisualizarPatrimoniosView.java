@@ -1,4 +1,5 @@
 package views;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -71,16 +72,77 @@ public class VisualizarPatrimoniosView {
                     if (listaPatrimonios.isEmpty()) {
                         System.out.println("Nenhum patrimônio cadastrado!");
                     }else{
-                        System.out.println("--TODOS OS PATRIMÔNIOS COM DEFEITO--");
-                        controlador.consultarPatrimonioDefeituosos();
+                        System.out.println("--TIPOS DE PATRIMÔNIO COM DEFEITO--");
+                        if (!controlador.consultarPatrimonioDefeituosos()) {
+                            System.out.println("Não há patrimônios defeituosos!");
+                        }
                     }
                     break;
                 case 4:
+                    if (listaPatrimonios.isEmpty()) {
+                        System.out.println("Nenhum patrimônio cadastrado!");
+                    }else{
+                        System.out.println("--TIPOS DE PATRIMÔNIO ACEITADOS--");
+                        for ( String p : PatrimonioModel.arrayTipos ) {
+                            System.out.println(p);
+                        }
+                        System.out.println("Digite o tipo a ser exibido:");
+                        String tipo = scanner.nextLine();
+
+                        if (!controlador.consultarPatrimonioMesmoTipo(tipo)) {
+                            System.out.println("Não há patrimônios com esse tipo!");
+                        }
+                    }
                     break;
                 case 5:
+                    if (listaPatrimonios.isEmpty()) {
+                        System.out.println("Nenhum patrimônio cadastrado!");
+                    }else{
+                        System.out.println("--Selecione a data em que o patrimônio foi depreciado");
+                        System.out.println("Digite o ano:");
+                        int ano = scanner.nextInt();
+                        
+                        System.out.println("Digite o mês:");
+                        byte mes = scanner.nextByte();
+
+                        System.out.println("Digite o dia:");
+                        byte dia = scanner.nextByte();
+
+                        System.out.println("--TIPOS DE PATRIMÔNIO COM ESTA DATA DE DEPRECIAÇÃO--");
+                        LocalDate depreciacao = LocalDate.now().withYear(ano).withMonth(mes).withDayOfMonth(dia);
+                        if (!controlador.consultarPatrimonioDepreciacao(depreciacao)) {
+                            System.out.println("Não há patrimônios com essa data de depreciação!");
+                        }
+                    }
                     break;
                 case 6:
+                    if (listaPatrimonios.isEmpty()) {
+                        System.out.println("Nenhum patrimônio cadastrado!");
+                    }else{
+                        System.out.println("--Selecione a data em que o patrimônio foi cadastrado");
+                        System.out.println("Digite o ano:");
+                        int ano = scanner.nextInt();
+                        
+                        System.out.println("Digite o mês:");
+                        byte mes = scanner.nextByte();
+
+                        System.out.println("Digite o dia:");
+                        byte dia = scanner.nextByte();
+
+                        System.out.println("--TIPOS DE PATRIMÔNIO COM ESTA DATA DE DEPRECIAÇÃO--");
+                        LocalDate depreciacao = LocalDate.now().withYear(ano).withMonth(mes).withDayOfMonth(dia);
+                        if (!controlador.consultarPatrimonioDataCadastro(depreciacao)) {
+                            System.out.println("Não há patrimônios com essa data de cadastro!");
+                        }
+                    }
                     break;
+                case 7:
+                    if (listaPatrimonios.isEmpty()) {
+                        System.out.println("Nenhum patrimônio cadastrado!");
+                    }else{
+                        System.out.println("--HISTÓRICO DE PATRIMÔNIOS CADASTRADOS (DO MAIS RECENTE PRO MAIS ANTIGO)");
+                        controlador.consultarHistoricoDePatrimonios();
+                    }
                 default:
                     System.out.println("Opção inválida.");
                     break;
