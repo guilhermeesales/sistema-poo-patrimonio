@@ -22,7 +22,9 @@ public class VisualizarPatrimoniosView {
             System.out.println("5.Listar por data de Depreciação");
             System.out.println("6.Listar por data de cadastro");
             System.out.println("7.Exibir histórico patrimônios cadastrados");
-            
+            System.out.println("0.Voltar");
+            System.out.println("Selecione a opção: ");
+
             try {
                 opcao = scanner.nextInt();
             } catch (InputMismatchException e) {
@@ -50,22 +52,25 @@ public class VisualizarPatrimoniosView {
                     if (listaPatrimonios.isEmpty()) {
                         System.out.println("Nenhum patrimônio cadastrado!");   
                     }else{
-                        System.out.println("--Selecione o local para ver os patrimônios");
-                        System.out.println("Selecione a unidade");
-                        byte unidade = scanner.nextByte();
-                        
-                        System.out.println("Selecione o bloco");
-                        byte bloco = scanner.nextByte();
+                        try {
+                            System.out.println("--Selecione o local para ver os patrimônios");
+                            System.out.println("Selecione a unidade");
+                            byte unidade = scanner.nextByte();
+                            
+                            System.out.println("Selecione o bloco");
+                            byte bloco = scanner.nextByte();
+                            scanner.nextLine(); //limpar buffer do teclado
 
-                        System.out.println("Digite a sala(1 a 8 ou Laboratorio ou Secretaria)");
-                        String sala = scanner.nextLine();
+                            System.out.println("Digite a sala(1 a 8 ou Laboratorio ou Secretaria)");
+                            String sala = scanner.next();
 
-                        System.out.println("--PATRIMÔNIOS CADASTRADOS NESTA LOCALIZAÇÃO--");
-                        if (!controlador.consultarPatrimonioLocalizacao(sala, bloco, unidade)) {
-                            System.out.println("Não há patrimônios cadastrados nessa sala!");
+                            System.out.println("--PATRIMÔNIOS CADASTRADOS NESTA LOCALIZAÇÃO--");
+                            if (!controlador.consultarPatrimonioLocalizacao(sala, bloco, unidade)) {
+                                System.out.println("Não há patrimônios cadastrados nessa sala!");
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Insira os dados corretamente!");
                         }
-
-                        
                     }
                     break;
                 case 3:
@@ -83,11 +88,10 @@ public class VisualizarPatrimoniosView {
                         System.out.println("Nenhum patrimônio cadastrado!");
                     }else{
                         System.out.println("--TIPOS DE PATRIMÔNIO ACEITADOS--");
-                        for ( String p : PatrimonioModel.arrayTipos ) {
-                            System.out.println(p);
-                        }
+                        controlador.exibirTiposPatrimonio();
+
                         System.out.println("Digite o tipo a ser exibido:");
-                        String tipo = scanner.nextLine();
+                        String tipo = scanner.next();
 
                         if (!controlador.consultarPatrimonioMesmoTipo(tipo)) {
                             System.out.println("Não há patrimônios com esse tipo!");
@@ -98,20 +102,24 @@ public class VisualizarPatrimoniosView {
                     if (listaPatrimonios.isEmpty()) {
                         System.out.println("Nenhum patrimônio cadastrado!");
                     }else{
-                        System.out.println("--Selecione a data em que o patrimônio foi depreciado");
-                        System.out.println("Digite o ano:");
-                        int ano = scanner.nextInt();
-                        
-                        System.out.println("Digite o mês:");
-                        byte mes = scanner.nextByte();
+                        try{
+                            System.out.println("--Selecione a data em que o patrimônio foi depreciado");
+                            System.out.println("Digite o ano:");
+                            int ano = scanner.nextInt();
+                            
+                            System.out.println("Digite o mês:");
+                            byte mes = scanner.nextByte();
 
-                        System.out.println("Digite o dia:");
-                        byte dia = scanner.nextByte();
+                            System.out.println("Digite o dia:");
+                            byte dia = scanner.nextByte();
 
-                        System.out.println("--TIPOS DE PATRIMÔNIO COM ESTA DATA DE DEPRECIAÇÃO--");
-                        LocalDate depreciacao = LocalDate.now().withYear(ano).withMonth(mes).withDayOfMonth(dia);
-                        if (!controlador.consultarPatrimonioDepreciacao(depreciacao)) {
-                            System.out.println("Não há patrimônios com essa data de depreciação!");
+                            System.out.println("--TIPOS DE PATRIMÔNIO COM ESTA DATA DE DEPRECIAÇÃO--");
+                            LocalDate depreciacao = LocalDate.now().withYear(ano).withMonth(mes).withDayOfMonth(dia);
+                            if (!controlador.consultarPatrimonioDepreciacao(depreciacao)) {
+                                System.out.println("Não há patrimônios com essa data de depreciação!");
+                            }
+                        }catch(Exception e){
+                            System.out.println("Digite a data corretamente!");
                         }
                     }
                     break;
@@ -119,21 +127,26 @@ public class VisualizarPatrimoniosView {
                     if (listaPatrimonios.isEmpty()) {
                         System.out.println("Nenhum patrimônio cadastrado!");
                     }else{
-                        System.out.println("--Selecione a data em que o patrimônio foi cadastrado");
-                        System.out.println("Digite o ano:");
-                        int ano = scanner.nextInt();
-                        
-                        System.out.println("Digite o mês:");
-                        byte mes = scanner.nextByte();
+                        try{
+                            System.out.println("--Selecione a data em que o patrimônio foi cadastrado");
+                            System.out.println("Digite o ano:");
+                            int ano = scanner.nextInt();
+                            
+                            System.out.println("Digite o mês:");
+                            byte mes = scanner.nextByte();
 
-                        System.out.println("Digite o dia:");
-                        byte dia = scanner.nextByte();
+                            System.out.println("Digite o dia:");
+                            byte dia = scanner.nextByte();
 
-                        System.out.println("--TIPOS DE PATRIMÔNIO COM ESTA DATA DE DEPRECIAÇÃO--");
-                        LocalDate depreciacao = LocalDate.now().withYear(ano).withMonth(mes).withDayOfMonth(dia);
-                        if (!controlador.consultarPatrimonioDataCadastro(depreciacao)) {
-                            System.out.println("Não há patrimônios com essa data de cadastro!");
+                            System.out.println("--TIPOS DE PATRIMÔNIO COM ESTA DATA DE DEPRECIAÇÃO--");
+                            LocalDate depreciacao = LocalDate.now().withYear(ano).withMonth(mes).withDayOfMonth(dia);
+                            if (!controlador.consultarPatrimonioDataCadastro(depreciacao)) {
+                                System.out.println("Não há patrimônios com essa data de cadastro!");
+                            }
+                        }catch(Exception e){
+                            System.out.println("Digite a data corretamente!");
                         }
+
                     }
                     break;
                 case 7:
@@ -143,6 +156,8 @@ public class VisualizarPatrimoniosView {
                         System.out.println("--HISTÓRICO DE PATRIMÔNIOS CADASTRADOS (DO MAIS RECENTE PRO MAIS ANTIGO)");
                         controlador.consultarHistoricoDePatrimonios();
                     }
+                case 0:
+                    System.out.println("Retornando ao menu principal!");
                     break;
                 default:
                     System.out.println("Opção inválida.");
