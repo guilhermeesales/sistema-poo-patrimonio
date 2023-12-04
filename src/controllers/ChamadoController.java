@@ -2,6 +2,8 @@ package controllers;
 
 import models.ChamadoModel;
 
+import javax.swing.plaf.basic.BasicCheckBoxMenuItemUI;
+
 public class ChamadoController {
     public void historicoChamado() {
         int cont = 0;
@@ -46,5 +48,15 @@ public class ChamadoController {
                 System.out.println("Descrição: " + chamado.getDiscricaoChamado());
             }*/
         }
+
+        public String tamanhoValido(int chamado, BasicController bControl) {
+            if (chamado > bControl.historicoChamados().size()){
+                return "Digite um número de chamado válido";
+            }
+            return "Tamanho válido";
+        }
+
+
+
     }
 

@@ -16,9 +16,7 @@ public class EditarChamadoView {
             String editar ;
             System.out.println("Qual o chamado que deseja editar:");
             chamado1 = scan.nextInt();
-            if (chamado1 > bControl.historicoChamados().size()){
-                System.out.println("Digite um número de chamado válido");
-            }
+            cControl.tamanhoValido(chamado1, bControl);
 
             System.out.println("Qual deseja alterar;");
             System.out.println("[1]Nome");

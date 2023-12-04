@@ -30,13 +30,12 @@ public class CadastrarPatrimonioView {
 
             local.ExibirSalas();
             System.out.println("Digite a sala do patrimônio:");
-            String sala = scanner.nextLine();
+            String sala = scanner.next();
             local.setSala(sala);
 
             AdminController adm = new AdminController();
             adm.cadastrarAtivos(nome, tipo, local);
 
-            scanner.close();
 
         } catch (InputMismatchException e) {
             System.out.println("Digite uma entrada válida! - " + e.getMessage());

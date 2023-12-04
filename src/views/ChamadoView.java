@@ -26,7 +26,6 @@ public class ChamadoView {
             // Código para criar o chamado,
             while (true) {
                 correct = scanner.nextInt();
-
                 if (correct == 1) {
                     basic.criarChamado(name, type, description);
                     break;
@@ -35,13 +34,10 @@ public class ChamadoView {
                     break;
                 } else {
                     System.out.println("Digite um numero valido!");
-                    continue;
                 }
             }
         } catch (InputMismatchException e) {
             System.out.println("Ocorreu um erro ao criar o chamado: ");
-
-
             exibirChamadoView();
 
 

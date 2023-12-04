@@ -143,6 +143,7 @@ public class VisualizarPatrimoniosView {
                         System.out.println("--HISTÓRICO DE PATRIMÔNIOS CADASTRADOS (DO MAIS RECENTE PRO MAIS ANTIGO)");
                         controlador.consultarHistoricoDePatrimonios();
                     }
+                    break;
                 default:
                     System.out.println("Opção inválida.");
                     break;

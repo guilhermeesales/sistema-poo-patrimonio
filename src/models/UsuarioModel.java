@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UsuarioModel {
+public abstract class UsuarioModel {
     // Implementação da classe de Usuário
     public static boolean usuarioLogado;
     private String nome;

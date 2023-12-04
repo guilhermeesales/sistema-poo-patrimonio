@@ -1,6 +1,7 @@
 package views;
 
 import controllers.AdminController;
+import models.AdminModel;
 import models.UsuarioModel;
 
 import java.util.InputMismatchException;
@@ -11,7 +12,7 @@ public class LoginView {
     public static void ExibirLoginView() {
         AdminController aController = new AdminController();
         Scanner scanner = new Scanner(System.in);
-        int opcao = 1000;
+        int opcao = -1;
         do {
             System.out.println("----Tela inicial----");
             System.out.println("[1] Logar no sistema");
@@ -32,12 +33,7 @@ public class LoginView {
                     System.out.println("Digite a senha: ");
                     String senha = scanner.next();
                     // Fazer login no sistema
-                    UsuarioModel userModel = aController.logarSistema(email, senha);
-
-                    if(userModel == null) {
-                        System.out.println("As credenciais não foram digitadas corretamente.");
-
-                    }
+                    AdminModel admin = aController.logarSistema(email, senha);
 
                     break;
                 case 0:
@@ -48,7 +44,7 @@ public class LoginView {
                     break;
             }
             System.out.println();
-            //scanner.close();
         } while (opcao != 0);
+
     }
 }

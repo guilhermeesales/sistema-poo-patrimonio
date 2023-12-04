@@ -33,9 +33,9 @@ public class PatrimonioModel {
 
     public String toString(){
         if (getDefeito() != null) {
-            return "Código:"+ getCodigo() +" - Nome:"+ getNome() +" - Tipo:"+getTipo()+" \nUnidade:"+getLocal().getUnidade()+" - Bloco:" + getLocal().getBloco() + " - Sala:" + getLocal().getSala() + "\nData de Cadastro:"+getDataDeCadastro()+" - Data de Depreciação:"+getDataDepreciacao()+ " - Defeito"+getDefeito();
+            return "Código:"+ getCodigo() +" - Nome:"+ getNome() +" - Tipo:"+getTipo()+" \nUnidade:"+getLocal().getUnidade()+" - Bloco:" + getLocal().getBloco() + " - Sala:" + getLocal().getSala() + "\nData de Cadastro:"+getDataDeCadastro()+" - Data de Depreciação:"+getDataDepreciacao()+ " - Defeito"+getDefeito()+"\n";
         }
-        return "Código:"+ getCodigo() +" - Nome:"+ getNome() +" - Tipo:"+getTipo()+" \nUnidade:"+getLocal().getUnidade()+" - Bloco:" + getLocal().getBloco() + " - Sala:" + getLocal().getSala() + "\nData de Cadastro:"+getDataDeCadastro()+" - Data de Depreciação:"+getDataDepreciacao()+ " - Defeito: Sem defeitos.";
+        return "Código:"+ getCodigo() +" - Nome:"+ getNome() +" - Tipo:"+getTipo()+" \nUnidade:"+getLocal().getUnidade()+" - Bloco:" + getLocal().getBloco() + " - Sala:" + getLocal().getSala() + "\nData de Cadastro:"+getDataDeCadastro()+" - Data de Depreciação:"+getDataDepreciacao()+ " - Defeito: Sem defeitos.\n";
     }
 
     //Getters da classe.

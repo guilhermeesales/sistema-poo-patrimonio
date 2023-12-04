@@ -14,11 +14,12 @@ import views.UsuarioAdminView;
 import views.UsuarioBasicView;
 
 public class UsuarioController {
+
     AdminModel adm = new AdminModel();
 
     // Methods
 
-    public UsuarioModel logarSistema(String email, String senha) {
+    public AdminModel logarSistema(String email, String senha) {
         Map<String, AdminModel> admin = adm.loadAdminstrador();
         Collection<AdminModel> usuarios = admin.values();
 
@@ -28,9 +29,8 @@ public class UsuarioController {
                 UsuarioModel.setUsuarioLogado(true);
                 definirRotas(usuario);
                 return usuario;
-            }
 
-            UsuarioModel.setUsuarioLogado(false);
+            }
         }
 
         return null;

@@ -23,7 +23,7 @@ public class RelatorioController {
         rModel.setCodRelatorio(numeroInteiroAleatorio);
 
         try {
-            PdfWriter.getInstance(documentoPDF, new FileOutputStream("E:\\Teste.pdf"));
+            PdfWriter.getInstance(documentoPDF, new FileOutputStream("E:\\"+nomeRelatorio+".pdf"));
             documentoPDF.open();
             documentoPDF.setPageSize(PageSize.A4);
             documentoPDF.add(new Paragraph("Nome do relátorio: " + nomeRelatorio));
