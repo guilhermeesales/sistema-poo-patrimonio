@@ -50,7 +50,7 @@ public class UsuarioAdminView {
                     break;
                 case 6:
                     System.out.println("Você escolheu Gerar Relatório.");
-                    // Adicione aqui o código para Gerar Relatório.
+                    RelatorioView.exibirRelatorioView();
                     break;
                 case 7:
                     System.out.println("Você escolheu Editar Patrimonio.");

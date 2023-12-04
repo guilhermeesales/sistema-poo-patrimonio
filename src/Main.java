@@ -1,4 +1,3 @@
-import models.AdminModel;
 import views.LoginView;
 
 public class Main {

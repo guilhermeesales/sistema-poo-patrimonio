@@ -36,6 +36,7 @@ public class LoginView {
 
                     if(userModel == null) {
                         System.out.println("As credenciais não foram digitadas corretamente.");
+
                     }
 
                     break;

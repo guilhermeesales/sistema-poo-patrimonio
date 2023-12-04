@@ -18,7 +18,7 @@ public class ChamadoView {
         description = scanner.nextLine();
         System.out.println("Nome: " + name);
         System.out.println("tipo: " + type);
-        System.out.println("Discrição: " + description);
+        System.out.println("Descrição: " + description);
         System.out.println("[1]Salvar\n[0]Refazer");
         try {
             // Código para criar o chamado,
@@ -40,7 +40,6 @@ public class ChamadoView {
                 System.out.println("Ocorreu um erro ao criar o chamado: ");
 
                 exibirChamadoView();
-
         }
     }
 

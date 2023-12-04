@@ -20,7 +20,6 @@ public class UsuarioController {
         Collection<AdminModel> usuarios = admin.values();
 
         for(AdminModel usuario : usuarios) {
-            System.out.println(usuario.getNome());
             if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
                 UsuarioModel.setUsuarioLogado(true);
                 definirRotas(usuario);
@@ -54,9 +53,6 @@ public class UsuarioController {
     // Devolver todos os patrimônios cadastrados no sistema
     public void consultarPatrimonio() {
         UsuarioModel admin = new UsuarioModel();
-
-        System.out.println("ENTREI AQUI");
-
 
         ArrayList<PatrimonioModel> patrimonios = adm.getPatrimoniosCadastrados();
         if(patrimonios.isEmpty()) {
