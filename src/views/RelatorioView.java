@@ -1,7 +1,5 @@
 package views;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.pdf.PdfWriter;
 import controllers.BasicController;
 import controllers.ChamadoController;
 import controllers.RelatorioController;
@@ -24,6 +22,7 @@ public class RelatorioView {
 
                 if(opc == 1) {
                     try {
+                        Scanner scannerEntrada = new Scanner(System.in);
                         BasicController bController = new BasicController();
                         ArrayList<ChamadoModel> chamado = bController.historicoChamados();
                         ChamadoController chamadoC = new ChamadoController();
@@ -38,8 +37,9 @@ public class RelatorioView {
 
                         System.out.println(chamadoSelecionado.getNomeChamado());
 
-                        System.out.println("Digite o nome do relátorio: ");
-                        String nomeRelatorio = scanner.next();
+                        System.out.println("Precisamos de um nome para o relatório");
+                        System.out.println("Digite: ");
+                        String nomeRelatorio = scannerEntrada.nextLine();
 
                         RelatorioController.gerarPDFRelatorio(nomeRelatorio, chamadoSelecionado.getNomeChamado(), chamadoSelecionado.getTipoChamado(), chamadoSelecionado.getDiscricaoChamado());
                         System.out.println("Documento gerado com sucesso!");
