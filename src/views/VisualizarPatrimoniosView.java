@@ -138,7 +138,7 @@ public class VisualizarPatrimoniosView {
                             System.out.println("Digite o dia:");
                             byte dia = scanner.nextByte();
 
-                            System.out.println("--TIPOS DE PATRIMÔNIO COM ESTA DATA DE DEPRECIAÇÃO--");
+                            System.out.println("--TIPOS DE PATRIMÔNIO COM ESTA DATA DE CADASTRO--");
                             LocalDate depreciacao = LocalDate.now().withYear(ano).withMonth(mes).withDayOfMonth(dia);
                             if (!controlador.consultarPatrimonioDataCadastro(depreciacao)) {
                                 System.out.println("Não há patrimônios com essa data de cadastro!");

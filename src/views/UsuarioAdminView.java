@@ -1,11 +1,8 @@
 package views;
 
 import controllers.SessaoController;
-import models.AdminModel;
-import models.UsuarioModel;
 
 import java.util.InputMismatchException;
-import java.util.Map;
 import java.util.Scanner;
 
 public class UsuarioAdminView {
@@ -41,7 +38,7 @@ public class UsuarioAdminView {
                     break;
                 case 3:
                     System.out.println("Você escolheu editar Localizar Patrimonio.");
-                    // Adicione aqui o código para Localizar Patrimonio.
+                    LocalizarPatrimonioView.exibirLocalizarPatrimoniosView();
                     break;
                 case 4:
                     System.out.println("Você escolheu Visualizar Patrimonios.");

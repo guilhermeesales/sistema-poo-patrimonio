@@ -35,7 +35,7 @@ public class CadastrarPatrimonioView {
 
             AdminController adm = new AdminController();
             adm.cadastrarAtivos(nome, tipo, local);
-
+            System.out.println("Patrimônio cadastrado com sucesso!");
 
         } catch (InputMismatchException e) {
             System.out.println("Digite uma entrada válida! - " + e.getMessage());

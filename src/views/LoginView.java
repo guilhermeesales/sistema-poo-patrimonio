@@ -18,6 +18,7 @@ public class LoginView {
             System.out.println("[1] Logar no sistema");
             System.out.println("[0] Sair do sistema");
             System.out.print("Digite sua escolha: ");
+
             try {
                 opcao = scanner.nextInt();
             } catch (InputMismatchException e) {
@@ -38,6 +39,7 @@ public class LoginView {
                     break;
                 case 0:
                     System.out.println("Você escolheu sair.");
+                    System.exit(0); //Fecha o programa.
                     break;
                 default:
                     System.out.println("Opção inválida.");

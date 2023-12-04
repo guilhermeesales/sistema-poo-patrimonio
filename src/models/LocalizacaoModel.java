@@ -17,6 +17,7 @@ public class LocalizacaoModel {
         this.sala = sala;
     }
 
+    //Método para exibir as salas, percorrendo a lista e printando as salas da instituição UFC.
     public void ExibirSalas(){
         System.out.println("--Salas de cada bloco--");
         for(String p : colecaoDeSalas){

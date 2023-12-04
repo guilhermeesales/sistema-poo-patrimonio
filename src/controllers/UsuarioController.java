@@ -99,7 +99,7 @@ public class UsuarioController {
         }
         return contemTipo;
     }
-
+    //Méotodo para printar os patrimônios com a data de depreciação passada.
     public boolean consultarPatrimonioDepreciacao(LocalDate data){
         boolean contemData = false;
         for (PatrimonioModel p: patrimonios) {
@@ -110,7 +110,7 @@ public class UsuarioController {
         }
         return contemData;
     }
-
+    //Méotodo para printar os patrimônios com a data de cadastro passada.
     public boolean consultarPatrimonioDataCadastro(LocalDate data){
         boolean contemData = false;
         for (PatrimonioModel p: patrimonios) {
@@ -122,16 +122,19 @@ public class UsuarioController {
         return contemData;
     }
 
+    //Método para consultar o histórico de patrimônios cadastrados do mais recente ao mais antigo.
     public void consultarHistoricoDePatrimonios(){
         for (int i = patrimonios.size()-1; i >= 0; i--) {
             System.out.println(patrimonios.get(i).toString());
         }
     }
 
+    //Método para exibir os tipos de patrimônios aceitados pelo sistema.
     public void exibirTiposPatrimonio(){
         for ( String p : PatrimonioModel.arrayTipos ) {
             System.out.println(p);
         }
     }
+
 
 }
