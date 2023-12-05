@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UsuarioModel {
+public abstract class UsuarioModel {
     // Implementação da classe de Usuário
+    public static boolean usuarioLogado;
     private String nome;
     private char sexo;
     private String email;
     private String senha;
     private String nivelAcesso;
-    Map<String, UsuarioModel> UsuariosCadastrados = new HashMap<>();
+
+    static public Map<String, AdminModel> UsuariosCadastrados = new HashMap<>();
+    private static ArrayList<PatrimonioModel> patrimoniosCadastrados = new ArrayList<>();
 
 
     // Getters e Setters
@@ -45,5 +48,26 @@ public class UsuarioModel {
     public void setNivelAcesso(String nivelAcesso) {
         this.nivelAcesso = nivelAcesso;
     }
+    public static boolean isUsuarioLogado() {
+        return usuarioLogado;
+    }
+    public static void setUsuarioLogado(boolean usuarioLogado) {
+        UsuarioModel.usuarioLogado = usuarioLogado;
+    }
+    public ArrayList<PatrimonioModel> getPatrimoniosCadastrados() {
+        return patrimoniosCadastrados;
+    }
 
+    public void setPatrimoniosCadastrados(String nome, String tipo, LocalizacaoModel local) {
+         patrimoniosCadastrados.add(new PatrimonioModel(nome, tipo, local));
+    }
+
+    public Map<String, AdminModel> getUsuariosCadastrados() {
+        return UsuariosCadastrados;
+    }
+
+    public void setUsuariosCadastrados(AdminModel usuario) {
+        UsuariosCadastrados.put(usuario.getNome(), usuario);
+
+    }
 }
